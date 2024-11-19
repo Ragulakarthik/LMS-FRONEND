@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Form</title>
+    <title>Manage Books</title>
     <link rel="stylesheet" href="manageBook.css">
 </head>
 <body>
@@ -28,60 +28,51 @@
             </ul>
         </nav>
     </header>
+
     <main>
-        <section id="bookFormSection">
-            <h2>Book Details Form</h2>
-            <form id="bookForm">
-                <div class="flex-row">
-                    <label for="bookId">Book ID:</label>
-                    <input type="text" id="bookId" name="bookId" placeholder="Enter Book ID" required>
-                </div>
-                <span id="bookIdError" class="error-message"></span>
-                
-                <div class="flex-row">
-                    <label for="authorId">Author ID:</label>
-                    <input type="text" id="authorId" name="authorId" placeholder="Enter Author ID" required>
-                </div>
-                <span id="authorIdError" class="error-message"></span>
-                
-                <div class="flex-row">
-                    <label for="publisherId">Publisher ID:</label>
-                    <input type="text" id="publisherId" name="publisherId" placeholder="Enter Publisher ID" required>
-                </div>
-                <span id="publisherIdError" class="error-message"></span>
+        <!-- Add Book Button -->
+        <div class="top-right">
+            <a href="add-books.html">
+                <button id="add-book-btn">Add Book</button>
+            </a>
+        </div>
 
-                <div class="flex-row">
-                    <label for="bookTitle">Book Title:</label>
-                    <input type="text" id="bookTitle" name="bookTitle" placeholder="Enter Book Title" required>
-                </div>
-                <span id="bookTitleError" class="error-message"></span>
-                
-                <div class="flex-row">
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" id="quantity" name="quantity" placeholder="Enter Quantity" min="1" required>
-                </div>
-                <span id="quantityError" class="error-message"></span>
+        <!-- Search Fields -->
+        <div class="search-container">
+            <p>Book ID</p>
+            <input type="text" id="search-book-id" placeholder="Search by Book ID">
+            <p>Author ID</p>
+            <input type="text" id="search-author-id" placeholder="Search by Author ID">
+            <p>Publisher ID</p>
+            <input type="text" id="search-publisher-id" placeholder="Search by Publisher ID">
+            <p>Title</p>
+            <input type="text" id="search-book-title" placeholder="Search by Book Title">
+            <button id="get-books-btn">Get All Books</button>
+        </div>
 
-                <div class="button-container">
-                    <button type="button" onclick="submitForm('add')">Add</button>
-                    <button type="button" class="update" onclick="submitForm('update')">Update</button>
-                    <button type="button" class="delete" onclick="submitForm('delete')">Delete</button>
-                    <button type="reset" form="bookForm">Clear</button>
-                </div>
-            </form>
-        </section>
+        <!-- Books Table -->
+        <table id="books-table">
+            <thead>
+                <tr>
+                    <th>Book ID</th>
+                    <th>Title</th>
+                    <th>Author ID</th>
+                    <th>Publisher ID</th>
+                    <th>Quantity</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be populated by JavaScript -->
+            </tbody>
+        </table>
     </main>
-    
-    <script>
-        function submitForm(action) {
-            const form = document.getElementById('bookForm');
-            form.action = `/submitBook?action=${action}`;
-            form.method = 'POST';
-            form.submit();
-        }
-    </script>
+
     <footer>
         <p>&copy; 2024 Library Management System</p>
     </footer>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="manageBooks.js"></script>
 </body>
 </html>

@@ -1,54 +1,45 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0f7fa;
+    color: #333;
+    line-height: 1.6;
+    padding-bottom: 100px; /* Space for the fixed footer */
+}
+
 /* Header Styles */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 20px;
     background: linear-gradient(135deg, #42a5f5, #7e57c2);
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-body, h1, h2, p, ul {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    background-color: #e0f7fa;
-    line-height: 1.6;
-}
-
 header h1 {
     font-size: 1.8rem;
     letter-spacing: 1px;
-    margin: 0;
-    flex-shrink: 0;
 }
 
-nav {
-    display: flex;
-    justify-content: flex-end;
-}
-
-/* General styles for the navigation bar */
 nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    justify-content: flex-start;
 }
 
 nav ul li {
-    position: relative; /* Necessary for positioning the dropdown content */
+    position: relative;
     margin-left: 10px;
 }
 
-/* Style for links in the navigation bar */
 nav ul li a {
-    display: inline-block;
     color: white;
     text-decoration: none;
     padding: 10px 15px;
@@ -56,23 +47,21 @@ nav ul li a {
     border-radius: 20px;
     transition: background-color 0.3s, transform 0.3s;
     font-weight: bold;
-    font-size: 0.85rem; /* Adjusted font size */
+    font-size: 0.85rem;
 }
 
 nav ul li a:hover {
     background-color: #00acc1;
-    transform: scale(1.1); /* Hover effect with scaling */
+    transform: scale(1.1);
 }
 
-/* Dropdown button styles */
 .dropbtn {
     cursor: pointer;
 }
 
-/* Dropdown content container, hidden by default */
 .dropdown-content {
     display: none;
-    position: absolute; /* Positioned relative to its parent */
+    position: absolute;
     background-color: white;
     min-width: 160px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -81,140 +70,149 @@ nav ul li a:hover {
     padding: 10px 0;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
     color: black;
-    padding: 12px 20px; /* Increased padding for more space inside each button */
-    text-decoration: none;
+    padding: 12px 20px;
     display: block;
-    font-size: 0.85rem; /* Adjusted font size */
-    transition: background-color 0.3s;
-    margin-bottom: 5px; /* Add space between dropdown items */
+    font-size: 0.85rem;
+    margin-bottom: 5px;
 }
 
-/* Remove extra margin for the last item in the dropdown */
-.dropdown-content a:last-child {
-    margin-bottom: 0;
-}
-
-/* Change background color of dropdown links on hover */
 .dropdown-content a:hover {
     background-color: #f1f1f1;
 }
 
-/* Show the dropdown when hovering over the parent list item */
 .dropdown:hover .dropdown-content {
-    display: block; /* Make dropdown visible on hover */
+    display: block;
 }
 
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 0;
-    }
-    nav ul li {
-        margin: 5px 0; /* Adjust spacing for list items */
-    }
-    main section {
-        width: 90%; /* Full width on mobile */
-        margin: 0 auto; /* Center on mobile */
-    }
-    .dropdown-content {
-        min-width: 100%; /* Full-width dropdown on smaller screens */
-    }
-}
-
-/* Book Form Styles */
-#bookForm {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-#bookForm div {
-    margin-bottom: 15px;
-    width: 100%;
-}
-
-#bookForm label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-#bookForm input, 
-#bookForm select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.button-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Adds spacing between buttons */
-}
-
-#bookForm button {
-    width: 100%;
-    padding: 10px;
+/* Button Styles */
+button {
+    padding: 10px 20px;
     background-color: #42a5f5;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-#bookForm button:hover {
+button:hover {
     background-color: #1e88e5;
 }
 
-/* Error Message Styles */
-.error-message {
-    color: red;
-    font-size: 0.875rem;
-    margin-top: 5px;
+/* Top-right Button Container */
+.top-right {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+/* Search Fields */
+.search-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-main {
-    padding: 20px;
+.search-container p {
+    font-weight: bold;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: white;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f5f5f5;
+}
+
+table td {
     text-align: center;
 }
 
-main section {
-    margin-bottom: 20px;
-    background-color: white;
+/* Action Buttons in Table */
+table td button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: #42a5f5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+table td button:hover {
+    background-color: #1e88e5;
+}
+
+/* Form Styles */
+#bookFormSection {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-main section:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+#bookFormSection h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
 }
 
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.flex-row label {
+    flex: 1;
+    font-weight: bold;
+}
+
+.flex-row input[type="text"],
+.flex-row input[type="number"] {
+    flex: 2;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Footer Styles */
 footer {
     background-color: #42a5f5;
     color: white;
@@ -224,4 +222,27 @@ footer {
     width: 100%;
     bottom: 0;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .top-right {
+        justify-content: center;
+    }
+
+    .flex-row {
+        flex-direction: column;
+    }
 }
